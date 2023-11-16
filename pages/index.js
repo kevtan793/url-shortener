@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
+import URLForm from '../components/URLForm';
 
 export default function Home() {
   return (
@@ -14,28 +15,5 @@ export default function Home() {
         <URLForm />
       </section>
     </Layout>
-  );
-}
-
-function URLForm() {
-  const [textInForm, setTextInForm] = React.useState("");
-
-
-  function handleShorten() {
-   if (textInForm) {
-      alert('Shortening url: ' + textInForm);
-      setTextInForm("");
-    } else {
-      alert('Please enter a url');
-    }
-  }
-
-  return (
-
-    <div>
-      <input value={textInForm} placeholder="enter url" type="text" onChange={(e) => setTextInForm(e.target.value)}/>
-      <button onClick={handleShorten}>Shorten</button>
-    </div>
-
   );
 }
