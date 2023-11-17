@@ -13,12 +13,12 @@ export default function URLForm() {
                     updatedTextInForm = "https://" + textInForm;
                     setTextInForm(updatedTextInForm);
                 }
-
                 setIsProcessing(true);
                 const response = await fetch('http://localhost:3001/api/shorten-url', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + process.env.NEXT_PUBLIC_URL_SHORTENER_API_KEY,
                     },
                     body: JSON.stringify( {url: updatedTextInForm}),
                     
