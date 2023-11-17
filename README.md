@@ -1,6 +1,8 @@
 
 ## Getting Started
 
+Add tiny_url api key to a ".env.local" file
+
 First, run the development server:
 npm run dev
 
